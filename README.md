@@ -28,7 +28,7 @@ This is a **prototype**, not a regulatory submission tool. Critical clarificatio
 
 ```bash
 # Clone the repo
-git clone https://github.com/[your-username]/npn-drafter.git
+git clone https://github.com/utsav7123/npn-drafter.git
 cd npn-drafter
 
 # Copy environment template
