@@ -1,0 +1,66 @@
+{
+  "monograph_id": "magnesium",
+  "name": "Magnesium",
+  "active_ingredient": "Magnesium (from magnesium oxide, magnesium citrate, magnesium bisglycinate, or magnesium malate)",
+  "dose_range": {
+    "min_mg_per_day": 100,
+    "max_mg_per_day": 500,
+    "subpopulation_limits": {
+      "adults": {
+        "min_mg": 100,
+        "max_mg": 500
+      },
+      "children_1_to_3": {
+        "min_mg": 50,
+        "max_mg": 200
+      },
+      "children_4_to_8": {
+        "min_mg": 75,
+        "max_mg": 300
+      },
+      "children_9_to_13": {
+        "min_mg": 100,
+        "max_mg": 400
+      }
+    }
+  },
+  "route_of_administration": [
+    "oral"
+  ],
+  "allowed_forms": [
+    "tablet",
+    "capsule",
+    "liquid",
+    "powder"
+  ],
+  "allowed_claims": [
+    "Helps in the development and maintenance of bones.",
+    "A factor in the maintenance of good health.",
+    "Helps to maintain healthy muscle function.",
+    "Aids in supporting a restful sleep."
+  ],
+  "duration_of_use": "Long-term use. Consult a health care practitioner if symptoms persist.",
+  "risk_information": {
+    "cautions": [
+      "Consult a health care practitioner if symptoms persist beyond 4 weeks.",
+      "May cause diarrhea or laxative effect, especially at higher doses.",
+      "Consult a health care practitioner prior to use if you have kidney disease."
+    ],
+    "contraindications": [
+      "Do not use if you are hypersensitive to any of the ingredients."
+    ],
+    "known_adverse_reactions": [
+      "Diarrhea",
+      "Gastrointestinal upset"
+    ]
+  },
+  "non_medicinal_ingredients_acceptable": [
+    "microcrystalline cellulose",
+    "magnesium stearate",
+    "croscarmellose sodium",
+    "silicon dioxide"
+  ],
+  "source_url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/natural-non-prescription/applications-submissions/product-licensing/monographs.html",
+  "version_date": "2023-06-15",
+  "class": 1
+}

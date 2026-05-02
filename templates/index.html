@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPN Application Drafter - Proof of Concept</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 NPN Application Drafter</h1>
+            <p class="subtitle">Proof of Concept - Class 1 Natural Health Product Advisor</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Step 1: Enter Product Specification</h2>
+                
+                <div class="sample-buttons">
+                    <button onclick="loadSample(0)" class="sample-btn">Sample: Vitamin D (Class 1)</button>
+                    <button onclick="loadSample(1)" class="sample-btn">Sample: Calcium + D3 (Class 2)</button>
+                    <button onclick="loadSample(2)" class="sample-btn">Sample: Novel Product (Class 3)</button>
+                </div>
+
+                <textarea id="productSpec" placeholder="Enter product spec as JSON..." rows="12">
+{
+  "product_name": "Vitamin D3 Tablets",
+  "medicinal_ingredients": [
+    {"name": "Cholecalciferol", "source": "from lanolin", "dose": 1000, "unit": "IU"}
+  ],
+  "non_medicinal_ingredients": ["Microcrystalline cellulose", "Magnesium stearate"],
+  "intended_use": "Supports bone and immune health"
+}
+                </textarea>
+
+                <button onclick="draftApplication()" class="submit-btn">Generate Application Draft</button>
+                <div id="loading" style="display: none;" class="loading">
+                    <div class="spinner"></div>
+                    Processing...
+                </div>
+            </section>
+
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <h2>Results</h2>
+
+                <div class="result-tabs">
+                    <button class="tab-btn active" onclick="showTab(event, 'classification')">Classification</button>
+                    <button class="tab-btn" onclick="showTab(event, 'draft')">Application Draft</button>
+                    <button class="tab-btn" onclick="showTab(event, 'validation')">Validation</button>
+                    <button class="tab-btn" onclick="showTab(event, 'reviewer')">Reviewer Checklist</button>
+                </div>
+
+                <!-- Classification Tab -->
+                <div id="classification" class="tab-content active">
+                    <h3>Classification Result</h3>
+                    <div id="classificationContent" class="result-box"></div>
+                </div>
+
+                <!-- Draft Tab -->
+                <div id="draft" class="tab-content">
+                    <h3>Application Draft</h3>
+                    <pre id="draftContent" class="code-block"></pre>
+                    <button onclick="downloadDraft()" class="download-btn">Download Draft (JSON)</button>
+                </div>
+
+                <!-- Validation Tab -->
+                <div id="validation" class="tab-content">
+                    <h3>Validation Results</h3>
+                    <div id="validationContent" class="result-box"></div>
+                </div>
+
+                <!-- Reviewer Tab -->
+                <div id="reviewer" class="tab-content">
+                    <h3>Human Review Checklist</h3>
+                    <div id="reviewerContent" class="result-box"></div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h3>About This Tool</h3>
+                <p>
+                    This is a <strong>proof of concept</strong> demonstrating how an AI system can help with 
+                    Health Canada Natural and Non-prescription Health Product (NHP) applications.
+                </p>
+                <ul>
+                    <li>✓ Classifies products as Class 1, 2, or 3</li>
+                    <li>✓ Matches against Health Canada monographs</li>
+                    <li>✓ Drafts application structure with LLM assistance</li>
+                    <li>✓ Validates draft against monograph rules</li>
+                    <li>✓ Generates human review checklist</li>
+                </ul>
+                <p class="disclaimer">
+                    <strong>⚠️ Disclaimer:</strong> This is not a regulatory tool. Real NHP submissions require expert 
+                    human review. This system is a prototype to demonstrate architectural understanding.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 NPN Application Drafter POC | Built for Organika Health Products</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentResult = null;
+
+        async function loadSample(index) {
+            const response = await fetch('/api/sample-products');
+            const samples = await response.json();
+            if (index < samples.length) {
+                document.getElementById('productSpec').value = JSON.stringify(
+                    {
+                        product_name: samples[index].product_name,
+                        medicinal_ingredients: samples[index].medicinal_ingredients,
+                        non_medicinal_ingredients: samples[index].non_medicinal_ingredients,
+                        intended_use: samples[index].intended_use
+                    },
+                    null,
+                    2
+                );
+            }
+        }
+
+        async function draftApplication() {
+            const specText = document.getElementById('productSpec').value.trim();
+            
+            if (!specText) {
+                alert('Please enter a product spec');
+                return;
+            }
+
+            try {
+                const productSpec = JSON.parse(specText);
+                
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('resultsSection').style.display = 'none';
+
+                const response = await fetch('/api/draft', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ product_spec: productSpec })
+                });
+
+                const result = await response.json();
+                currentResult = result;
+
+                displayResults(result);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('resultsSection').style.display = 'block';
+
+            } catch (e) {
+                alert('Error: ' + e.message);
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        function displayResults(result) {
+            // Classification
+            const classDiv = document.getElementById('classificationContent');
+            const classNum = result.classification.class;
+            const className = ['', 'Class 1', 'Class 2', 'Class 3'][classNum];
+            classDiv.innerHTML = `
+                <div class="alert alert-info">
+                    <strong>Classification: ${className}</strong>
+                    <p>${result.classification.reasoning}</p>
+                    <p><strong>Matched Monographs:</strong> ${result.classification.matched_monographs.join(', ') || 'None'}</p>
+                    ${result.classification.unmatched_ingredients.length > 0 ? 
+                        `<p><strong>Unmatched:</strong> ${result.classification.unmatched_ingredients.join(', ')}</p>` 
+                        : ''}
+                </div>
+            `;
+
+            // Draft
+            if (result.draft) {
+                document.getElementById('draftContent').textContent = JSON.stringify(result.draft, null, 2);
+            } else if (result.draft_error) {
+                document.getElementById('draftContent').textContent = `Error generating draft: ${result.draft_error}`;
+            }
+
+            // Validation
+            if (result.validation) {
+                const validDiv = document.getElementById('validationContent');
+                const validStatus = result.validation.valid ? 
+                    '<div class="alert alert-success">✓ Validation passed</div>' :
+                    '<div class="alert alert-warning">⚠️ Validation issues found</div>';
+                
+                let issuesHTML = `
+                    ${validStatus}
+                    <p><strong>Summary:</strong> ${result.validation.error_count} errors, ${result.validation.warning_count} warnings</p>
+                `;
+
+                if (result.validation.issues.length > 0) {
+                    issuesHTML += '<ul>';
+                    result.validation.issues.forEach(issue => {
+                        const icon = issue.severity === 'ERROR' ? '❌' : '⚠️';
+                        issuesHTML += `<li>${icon} <strong>${issue.field}:</strong> ${issue.message}</li>`;
+                    });
+                    issuesHTML += '</ul>';
+                }
+
+                validDiv.innerHTML = issuesHTML;
+            }
+
+            // Reviewer checklist
+            if (result.reviewer_notes && result.reviewer_notes.checklist_items) {
+                const revDiv = document.getElementById('reviewerContent');
+                let checklistHTML = '<div class="checklist">';
+
+                const categories = [...new Set(result.reviewer_notes.checklist_items.map(i => i.category))];
+                categories.forEach(cat => {
+                    checklistHTML += `<h4>${cat}</h4><ul>`;
+                    result.reviewer_notes.checklist_items
+                        .filter(i => i.category === cat)
+                        .forEach(item => {
+                            const icon = item.severity === 'high' ? '🔴' : item.severity === 'medium' ? '🟡' : '🟢';
+                            checklistHTML += `<li>${icon} ${item.item}</li>`;
+                        });
+                    checklistHTML += '</ul>';
+                });
+
+                checklistHTML += '</div>';
+                revDiv.innerHTML = checklistHTML;
+            }
+        }
+
+        function showTab(event, tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function downloadDraft() {
+            if (!currentResult || !currentResult.draft) {
+                alert('No draft to download');
+                return;
+            }
+
+            const dataStr = JSON.stringify(currentResult.draft, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `application_${Date.now()}.json`;
+            link.click();
+        }
+    </script>
+</body>
+</html>

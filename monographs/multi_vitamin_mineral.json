@@ -1,0 +1,53 @@
+{
+  "monograph_id": "multi_vitamin_mineral",
+  "name": "Multi-Vitamin and Mineral Supplement",
+  "active_ingredient": "A combination of vitamins and minerals including (but not limited to): Vitamin A, Vitamin D, Vitamin E, Vitamin C, Vitamin B complex, Calcium, Magnesium, Zinc, Iron",
+  "dose_range": {
+    "note": "Doses vary by individual ingredient; see subpopulation limits for guidance"
+  },
+  "route_of_administration": [
+    "oral"
+  ],
+  "allowed_forms": [
+    "tablet",
+    "capsule",
+    "liquid",
+    "gummy"
+  ],
+  "allowed_claims": [
+    "A factor in the maintenance of good health.",
+    "Helps the body metabolize carbohydrates, fats and proteins.",
+    "An antioxidant for the maintenance of good health.",
+    "Helps maintain healthy skin.",
+    "Supports immune system function.",
+    "Helps the body to metabolize nutrients."
+  ],
+  "duration_of_use": "Long-term use. Consult a health care practitioner if symptoms persist.",
+  "risk_information": {
+    "cautions": [
+      "Consult a health care practitioner if symptoms persist beyond 4 weeks.",
+      "Consult a health care practitioner prior to use if you are taking medications.",
+      "Multi-vitamin products may contain iron; keep out of reach of children."
+    ],
+    "contraindications": [
+      "Do not use if you are hypersensitive to any of the ingredients."
+    ],
+    "known_adverse_reactions": [
+      "Gastrointestinal upset",
+      "Constipation (if iron-containing)"
+    ]
+  },
+  "non_medicinal_ingredients_acceptable": [
+    "microcrystalline cellulose",
+    "magnesium stearate",
+    "croscarmellose sodium",
+    "silicon dioxide",
+    "starch",
+    "gum acacia",
+    "carnauba wax"
+  ],
+  "note": "This is a Class 1 multi-vitamin/mineral product containing only monographed ingredients in their allowed dose ranges. Products with novel combinations or higher doses may require Class 2 or 3 review.",
+  "source_url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/natural-non-prescription/applications-submissions/product-licensing/monographs.html",
+  "version_date": "2023-06-15",
+  "class": 1
+}

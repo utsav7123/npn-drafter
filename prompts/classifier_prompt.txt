@@ -1,0 +1,26 @@
+You are a Health Canada NPN classification expert.
+
+Your job is to classify a natural health product as Class 1, 2, or 3 based on monograph coverage:
+
+- CLASS 1: All medicinal ingredients are covered by a SINGLE monograph, with doses within the allowed range.
+- CLASS 2: All ingredients are covered by monographs, but across MULTIPLE monographs.
+- CLASS 3: Some ingredients are not covered by any current monograph (novel evidence required).
+
+Product spec:
+{product_spec}
+
+Available monographs:
+{available_monographs}
+
+Rules-based classification attempt:
+{rules_classification}
+
+Analyze the product. If the rules-based result seems correct, confirm it. If there is ambiguity (e.g., ingredient aliases, borderline dose ranges), revise if needed.
+
+Return your classification as JSON (and only JSON, no other text):
+{{
+  "class": 1 or 2 or 3,
+  "reasoning": "brief explanation",
+  "matched_monographs": ["list", "of", "monograph_ids"],
+  "unmatched_ingredients": ["list", "or", "empty"]
+}}

@@ -1,0 +1,65 @@
+{
+  "monograph_id": "calcium",
+  "name": "Calcium",
+  "active_ingredient": "Calcium (from calcium carbonate, calcium citrate, or calcium bisglycinate)",
+  "dose_range": {
+    "min_mg_per_day": 500,
+    "max_mg_per_day": 2500,
+    "subpopulation_limits": {
+      "adults": {
+        "min_mg": 500,
+        "max_mg": 2500
+      },
+      "children_1_to_3": {
+        "min_mg": 500,
+        "max_mg": 1500
+      },
+      "children_4_to_8": {
+        "min_mg": 500,
+        "max_mg": 2000
+      },
+      "children_9_to_13": {
+        "min_mg": 500,
+        "max_mg": 2500
+      }
+    }
+  },
+  "route_of_administration": [
+    "oral"
+  ],
+  "allowed_forms": [
+    "tablet",
+    "capsule",
+    "liquid",
+    "powder"
+  ],
+  "allowed_claims": [
+    "Helps in the development and maintenance of bones and teeth.",
+    "Helps in the absorption and use of calcium and phosphorus.",
+    "A factor in the maintenance of good health.",
+    "Source of calcium for the maintenance of healthy bones."
+  ],
+  "duration_of_use": "Long-term use. Consult a health care practitioner if symptoms persist.",
+  "risk_information": {
+    "cautions": [
+      "Consult a health care practitioner if symptoms persist beyond 4 weeks.",
+      "Consult a health care practitioner prior to use if you are taking medications that may interact with calcium supplements."
+    ],
+    "contraindications": [
+      "Do not use if you are hypersensitive to any of the ingredients."
+    ],
+    "known_adverse_reactions": [
+      "Constipation",
+      "Gastrointestinal upset"
+    ]
+  },
+  "non_medicinal_ingredients_acceptable": [
+    "microcrystalline cellulose",
+    "magnesium stearate",
+    "croscarmellose sodium",
+    "silicon dioxide"
+  ],
+  "source_url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/natural-non-prescription/applications-submissions/product-licensing/monographs.html",
+  "version_date": "2023-06-15",
+  "class": 1
+}

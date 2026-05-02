@@ -1,0 +1,68 @@
+{
+  "monograph_id": "vitamin_c",
+  "name": "Vitamin C (Ascorbic Acid)",
+  "active_ingredient": "Ascorbic Acid (Vitamin C) / Ascorbate",
+  "dose_range": {
+    "min_mg_per_day": 75,
+    "max_mg_per_day": 1500,
+    "subpopulation_limits": {
+      "adults": {
+        "min_mg": 75,
+        "max_mg": 1500
+      },
+      "children_1_to_3": {
+        "min_mg": 75,
+        "max_mg": 400
+      },
+      "children_4_to_8": {
+        "min_mg": 75,
+        "max_mg": 650
+      },
+      "children_9_to_13": {
+        "min_mg": 75,
+        "max_mg": 1200
+      }
+    }
+  },
+  "route_of_administration": [
+    "oral"
+  ],
+  "allowed_forms": [
+    "tablet",
+    "capsule",
+    "liquid",
+    "powder",
+    "lozenge"
+  ],
+  "allowed_claims": [
+    "Helps in maintaining healthy bones, cartilage, teeth and gums.",
+    "An antioxidant for the maintenance of good health.",
+    "Helps the body metabolize carbohydrates, fats and proteins.",
+    "A factor in normal collagen formation.",
+    "Supports immune system function."
+  ],
+  "duration_of_use": "Long-term use. Consult a health care practitioner if symptoms persist.",
+  "risk_information": {
+    "cautions": [
+      "Consult a health care practitioner if symptoms persist beyond 4 weeks.",
+      "May cause digestive upset in sensitive individuals."
+    ],
+    "contraindications": [
+      "Do not use if you are hypersensitive to any of the ingredients."
+    ],
+    "known_adverse_reactions": [
+      "Diarrhea",
+      "Gastrointestinal discomfort"
+    ]
+  },
+  "non_medicinal_ingredients_acceptable": [
+    "microcrystalline cellulose",
+    "magnesium stearate",
+    "croscarmellose sodium",
+    "silica",
+    "sorbitol"
+  ],
+  "source_url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/natural-non-prescription/applications-submissions/product-licensing/monographs.html",
+  "version_date": "2023-06-15",
+  "class": 1
+}

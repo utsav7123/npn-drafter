@@ -1,0 +1,31 @@
+{
+  "product_name": "Calcium + Vitamin D3 Combo Tablets",
+  "product_line": "Bone & Joint Support",
+  "medicinal_ingredients": [
+    {
+      "name": "Calcium carbonate",
+      "source": "from oyster shell",
+      "dose": 500,
+      "unit": "mg"
+    },
+    {
+      "name": "Cholecalciferol",
+      "source": "from lanolin (sheep's wool)",
+      "dose": 400,
+      "unit": "IU"
+    }
+  ],
+  "non_medicinal_ingredients": [
+    "Microcrystalline cellulose",
+    "Magnesium stearate",
+    "Silicon dioxide",
+    "Croscarmellose sodium"
+  ],
+  "intended_use": "Provides calcium and vitamin D for bone and tooth development. Supports calcium absorption and overall skeletal health.",
+  "package_size": "120 tablets",
+  "expiry": "36 months",
+  "storage": "Store in a cool, dry place.",
+  "target_population": "Adults",
+  "notes": "Each ingredient is covered by a monograph, but they are separate monographs (calcium and vitamin_d). This qualifies as Class 2.",
+  "expected_classification": "Class 2"
+}

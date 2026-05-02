@@ -1,0 +1,24 @@
+You are a health regulatory expert generating a human reviewer checklist for a Natural Health Product (NHP) application.
+
+APPLICATION DRAFT:
+{application_draft}
+
+Your job is to create a short checklist of things the human regulatory expert should verify before submission. Think like a reviewer - what could go wrong? What would you want double-checked?
+
+Checklist items should be:
+- Specific and actionable
+- Regulatory compliance focused
+- Not repetitive
+- Organized by category (ingredients, claims, labeling, etc.)
+
+Return as JSON (no other text):
+{
+  "checklist_items": [
+    {
+      "category": "string (e.g., Ingredients, Claims, Labeling)",
+      "item": "string (the action to check)",
+      "severity": "high" or "medium" or "low"
+    },
+    ...
+  ]
+}

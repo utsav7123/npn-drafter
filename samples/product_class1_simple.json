@@ -1,0 +1,23 @@
+{
+  "product_name": "Vitamin D3 Daily Tablets",
+  "product_line": "Essential Vitamins",
+  "medicinal_ingredients": [
+    {
+      "name": "Cholecalciferol",
+      "source": "from lanolin (sheep's wool)",
+      "dose": 1000,
+      "unit": "IU"
+    }
+  ],
+  "non_medicinal_ingredients": [
+    "Microcrystalline cellulose",
+    "Magnesium stearate",
+    "Silicon dioxide"
+  ],
+  "intended_use": "Helps in the development and maintenance of bones and teeth. Supports immune system function.",
+  "package_size": "180 tablets",
+  "expiry": "36 months",
+  "storage": "Store in a cool, dry place. Protect from light.",
+  "target_population": "Adults and children 1 year and older",
+  "expected_classification": "Class 1"
+}

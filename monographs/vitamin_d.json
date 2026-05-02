@@ -1,0 +1,64 @@
+{
+  "monograph_id": "vitamin_d",
+  "name": "Vitamin D",
+  "active_ingredient": "Cholecalciferol (Vitamin D3) / Ergocalciferol (Vitamin D2)",
+  "dose_range": {
+    "min_iu_per_day": 200,
+    "max_iu_per_day": 2500,
+    "subpopulation_limits": {
+      "adults": {
+        "min_iu": 200,
+        "max_iu": 2500
+      },
+      "children_1_to_3": {
+        "min_iu": 200,
+        "max_iu": 1500
+      },
+      "children_4_to_8": {
+        "min_iu": 200,
+        "max_iu": 1500
+      },
+      "children_9_to_13": {
+        "min_iu": 200,
+        "max_iu": 2000
+      }
+    }
+  },
+  "route_of_administration": [
+    "oral"
+  ],
+  "allowed_forms": [
+    "tablet",
+    "capsule",
+    "liquid",
+    "spray"
+  ],
+  "allowed_claims": [
+    "Helps in the development and maintenance of bones and teeth.",
+    "Helps in the absorption and use of calcium and phosphorus.",
+    "A factor in the maintenance of good health.",
+    "Supports immune system function."
+  ],
+  "duration_of_use": "Long-term use. Consult a health care practitioner if symptoms persist beyond 4 weeks.",
+  "risk_information": {
+    "cautions": [
+      "Consult a health care practitioner if symptoms persist beyond 4 weeks."
+    ],
+    "contraindications": [
+      "Do not use if you are hypersensitive to any of the ingredients."
+    ],
+    "known_adverse_reactions": [
+      "Gastrointestinal upset"
+    ]
+  },
+  "non_medicinal_ingredients_acceptable": [
+    "cellulose",
+    "magnesium stearate",
+    "silicon dioxide",
+    "croscarmellose sodium",
+    "microcrystalline cellulose"
+  ],
+  "source_url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/natural-non-prescription/applications-submissions/product-licensing/monographs.html",
+  "version_date": "2023-06-15",
+  "class": 1
+}

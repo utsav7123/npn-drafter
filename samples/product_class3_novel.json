@@ -1,0 +1,44 @@
+{
+  "product_name": "Korean Ginseng + Turmeric Advanced Complex",
+  "product_line": "Premium Wellness",
+  "medicinal_ingredients": [
+    {
+      "name": "Korean Red Ginseng extract",
+      "source": "from root (Panax ginseng C.A. Meyer)",
+      "dose": 100,
+      "unit": "mg",
+      "standardization": "4:1 extract"
+    },
+    {
+      "name": "Curcumin",
+      "source": "from turmeric root (Curcuma longa)",
+      "dose": 200,
+      "unit": "mg",
+      "notes": "Enhanced with BioPerine for bioavailability"
+    },
+    {
+      "name": "Resveratrol",
+      "source": "from grape seed extract",
+      "dose": 50,
+      "unit": "mg"
+    }
+  ],
+  "non_medicinal_ingredients": [
+    "Vegetable capsule shell (hypromellose)",
+    "Rice bran powder",
+    "Black pepper extract (BioPerine)"
+  ],
+  "intended_use": "Supports energy, mental clarity, and joint health. Traditional ingredients for vitality and wellness.",
+  "package_size": "60 capsules",
+  "expiry": "24 months",
+  "storage": "Store in a cool, dry place. Protect from light and moisture.",
+  "target_population": "Adults (18+)",
+  "novel_claims": true,
+  "requires_evidence": [
+    "PubMed literature on Korean ginseng efficacy",
+    "Clinical data for curcumin bioavailability with BioPerine",
+    "Safety data for multi-ingredient combination"
+  ],
+  "notes": "These ingredients are not (yet) in the standard Health Canada monograph library. This product would require Class 3 review with novel evidence submission.",
+  "expected_classification": "Class 3"
+}
