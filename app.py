@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 
 from agent.classifier import classify_product
 from agent.retriever import get_monographs
-from agent.drafter import draft_application
+from agent.drafter import draft_with_fallback
 from agent.validator import validate_application
 from agent.reviewer_notes import generate_reviewer_notes
 
@@ -63,21 +63,17 @@ def api_draft():
             return jsonify({"error": "No matching monographs found"}), 400
         
         # Step 3: Draft application
-        if not API_KEY:
-            return jsonify({"error": "ANTHROPIC_API_KEY not set"}), 500
+        draft_result = draft_with_fallback(product_spec, monograph_data, API_KEY or "")
         
-        draft_result = draft_application(product_spec, monograph_data, API_KEY)
-        
-        if draft_result.get("error"):
+        application_draft = draft_result.get("draft")
+        if not application_draft:
             return jsonify({
                 "classification": classification,
-                "draft": draft_result.get("draft"),
-                "draft_error": draft_result.get("error"),
+                "draft": None,
+                "draft_error": draft_result.get("error", "Draft generation failed"),
                 "validation": None,
                 "reviewer_notes": None
-            }), 200  # Return partial result
-        
-        application_draft = draft_result["draft"]
+            }), 200  # Return partial result only if no draft was produced
         
         # Step 4: Validate
         validation_result = validate_application(application_draft, monograph_data)
@@ -91,6 +87,7 @@ def api_draft():
             "draft": application_draft,
             "validation": validation_result,
             "reviewer_notes": reviewer_notes,
+            "draft_error": draft_result.get("error"),
             "error": None
         })
     

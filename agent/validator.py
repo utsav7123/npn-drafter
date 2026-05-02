@@ -71,10 +71,15 @@ def validate_schema(application_draft: Dict) -> Tuple[bool, List[Dict]]:
         validate(instance=application_draft, schema=APPLICATION_SCHEMA)
         return True, issues
     except ValidationError as e:
+        message = e.message
+        if e.validator == "required":
+            missing_field = e.message.split("'")
+            if len(missing_field) >= 2:
+                message = f"Required field '{missing_field[1]}' is missing"
         issues.append({
             "severity": "ERROR",
             "field": e.json_path or "root",
-            "message": f"Schema validation failed: {e.message}"
+            "message": message
         })
         return False, issues
 
@@ -138,7 +143,7 @@ def validate_dose_ranges(
             issues.append({
                 "severity": "WARNING",
                 "field": f"medicinal_ingredients[{idx}].dose",
-                "message": f"Dose {dose_numeric} {dose_unit} is at or above maximum {max_dose}"
+                "message": f"Dose {dose_numeric} {dose_unit} is above maximum {max_dose}"
             })
     
     return len([i for i in issues if i["severity"] == "ERROR"]) == 0, issues
@@ -277,7 +282,7 @@ def validate_application(
     warning_count = len([i for i in all_issues if i["severity"] == "WARNING"])
     
     return {
-        "valid": error_count == 0,
+        "valid": error_count == 0 and warning_count == 0,
         "total_issues": len(all_issues),
         "error_count": error_count,
         "warning_count": warning_count,

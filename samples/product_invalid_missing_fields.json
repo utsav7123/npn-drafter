@@ -1,0 +1,11 @@
+{
+  "product_name": "Incomplete Test Product",
+  "medicinal_ingredients": [
+    {
+      "name": "Cholecalciferol",
+      "dose": 1000,
+      "unit": "IU"
+    }
+  ],
+  "expected_behavior": "Should still classify, but downstream draft quality may be limited due to missing optional fields."
+}

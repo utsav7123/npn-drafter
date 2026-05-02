@@ -1,0 +1,23 @@
+{
+  "product_name": "Magnesium Citrate Capsules",
+  "product_line": "Mineral Support",
+  "medicinal_ingredients": [
+    {
+      "name": "Magnesium citrate",
+      "source": "mineral source",
+      "dose": 250,
+      "unit": "mg"
+    }
+  ],
+  "non_medicinal_ingredients": [
+    "Hypromellose capsule",
+    "Rice flour",
+    "Silicon dioxide"
+  ],
+  "intended_use": "Supports normal muscle function and helps maintain good health.",
+  "package_size": "90 capsules",
+  "expiry": "24 months",
+  "storage": "Keep tightly closed in a dry place.",
+  "target_population": "Adults",
+  "expected_classification": "Class 1"
+}

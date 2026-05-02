@@ -42,9 +42,10 @@ def draft_application(product_spec: Dict, monographs: Dict, api_key: str) -> Dic
         }
     
     # Format the prompt
-    prompt = prompt_template.format(
-        product_spec=json.dumps(product_spec, indent=2),
-        monographs=json.dumps(monographs, indent=2)
+    prompt = (
+        prompt_template
+        .replace("{product_spec}", json.dumps(product_spec, indent=2))
+        .replace("{monographs}", json.dumps(monographs, indent=2))
     )
     
     try:
@@ -132,20 +133,22 @@ def create_template_draft(product_spec: Dict, monographs: Dict) -> Dict:
     
     # Get first monograph's claims and risk info
     first_mono = list(monographs.values())[0] if monographs else {}
+    allowed_claims = first_mono.get("allowed_claims", [])
+    recommended_use = allowed_claims[0] if allowed_claims else "Product for health maintenance"
     
     return {
         "product_name": product_spec.get("product_name", "Natural Health Product"),
         "applicant_info": "Health Product Applicant",
         "medicinal_ingredients": medicinal_ingredients,
         "non_medicinal_ingredients": product_spec.get("non_medicinal_ingredients", []),
-        "recommended_use": first_mono.get("allowed_claims", ["Product for health maintenance"])[0],
+        "recommended_use": recommended_use,
         "recommended_dose": {
             "description": f"See monograph for {list(monographs.keys())[0] if monographs else 'product'}",
             "frequency": "As directed"
         },
         "duration_of_use": first_mono.get("duration_of_use", "As directed"),
         "risk_information": first_mono.get("risk_information", {}),
-        "claims": first_mono.get("allowed_claims", [])[:3],
+        "claims": allowed_claims[:3],
         "monograph_class": 1,
         "monographs_referenced": list(monographs.keys()),
         "_meta": {

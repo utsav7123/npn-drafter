@@ -1,0 +1,29 @@
+{
+  "product_name": "Immunity Duo C + D3",
+  "product_line": "Immune Defense",
+  "medicinal_ingredients": [
+    {
+      "name": "Ascorbic acid",
+      "source": "fermentation-derived",
+      "dose": 500,
+      "unit": "mg"
+    },
+    {
+      "name": "Cholecalciferol",
+      "source": "from lanolin",
+      "dose": 1000,
+      "unit": "IU"
+    }
+  ],
+  "non_medicinal_ingredients": [
+    "Microcrystalline cellulose",
+    "Croscarmellose sodium",
+    "Magnesium stearate"
+  ],
+  "intended_use": "Helps support immune health and overall wellness.",
+  "package_size": "60 tablets",
+  "expiry": "24 months",
+  "storage": "Store below 25C in a dry place.",
+  "target_population": "Adults",
+  "expected_classification": "Class 2"
+}

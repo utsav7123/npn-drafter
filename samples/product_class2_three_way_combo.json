@@ -1,0 +1,35 @@
+{
+  "product_name": "Bone Support Triple Formula",
+  "product_line": "Bone Health",
+  "medicinal_ingredients": [
+    {
+      "name": "Calcium carbonate",
+      "source": "from oyster shell",
+      "dose": 500,
+      "unit": "mg"
+    },
+    {
+      "name": "Magnesium citrate",
+      "source": "mineral source",
+      "dose": 200,
+      "unit": "mg"
+    },
+    {
+      "name": "Cholecalciferol",
+      "source": "from lanolin",
+      "dose": 400,
+      "unit": "IU"
+    }
+  ],
+  "non_medicinal_ingredients": [
+    "Microcrystalline cellulose",
+    "Magnesium stearate",
+    "Silicon dioxide"
+  ],
+  "intended_use": "Supports bone and teeth development and mineral maintenance.",
+  "package_size": "120 tablets",
+  "expiry": "36 months",
+  "storage": "Store in a cool, dry place.",
+  "target_population": "Adults",
+  "expected_classification": "Class 2"
+}

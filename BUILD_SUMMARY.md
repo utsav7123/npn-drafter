@@ -249,7 +249,7 @@ Tests automatically run on GitHub push (CI/CD).
 → Deterministic + testable. For regulatory systems, you need predictability. Rules are fast and cheap; LLM is the fallback.
 
 **"How does the validator catch LLM mistakes?"**
-→ After Claude drafts the application, the validator runs hard rules: dose ranges, claim matching, schema validation. LLMs hallucinate—invented claims, out-of-range doses. The validator is the safety net.
+→ After Claude drafts the application, the validator runs hard rules: dose ranges, claim matching, schema validation. LLMs hallucinate, invent claims, and propose out-of-range doses. The validator is the safety net.
 
 **"What would production look like?"**
 → Real monograph corpus (1000+), vector indexing, Class 2/3 support, audit logging, supplier verification, multi-tenant auth, real form generation. See docs/what_next.md for the roadmap.

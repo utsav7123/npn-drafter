@@ -1,0 +1,23 @@
+{
+  "product_name": "Vitamin C 500 Daily Tablets",
+  "product_line": "Essential Vitamins",
+  "medicinal_ingredients": [
+    {
+      "name": "Ascorbic acid",
+      "source": "fermentation-derived",
+      "dose": 500,
+      "unit": "mg"
+    }
+  ],
+  "non_medicinal_ingredients": [
+    "Microcrystalline cellulose",
+    "Magnesium stearate",
+    "Silicon dioxide"
+  ],
+  "intended_use": "Helps support immune function and provides antioxidant support.",
+  "package_size": "120 tablets",
+  "expiry": "30 months",
+  "storage": "Store in a cool, dry place.",
+  "target_population": "Adults",
+  "expected_classification": "Class 1"
+}

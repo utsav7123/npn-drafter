@@ -1,0 +1,29 @@
+{
+  "product_name": "Vitamin D3 + Ashwagandha Complex",
+  "product_line": "Stress and Immunity",
+  "medicinal_ingredients": [
+    {
+      "name": "Cholecalciferol",
+      "source": "from lanolin",
+      "dose": 1000,
+      "unit": "IU"
+    },
+    {
+      "name": "Ashwagandha extract",
+      "source": "Withania somnifera root",
+      "dose": 300,
+      "unit": "mg"
+    }
+  ],
+  "non_medicinal_ingredients": [
+    "Hypromellose capsule",
+    "Rice flour"
+  ],
+  "intended_use": "Supports immune health and helps with stress management.",
+  "package_size": "60 capsules",
+  "expiry": "24 months",
+  "storage": "Store below 25C.",
+  "target_population": "Adults",
+  "notes": "Contains one known monograph ingredient and one unmatched botanical ingredient.",
+  "expected_classification": "Class 3"
+}

@@ -40,8 +40,9 @@ def generate_reviewer_notes(
         }
     
     # Format the prompt
-    prompt = prompt_template.format(
-        application_draft=json.dumps(application_draft, indent=2)
+    prompt = prompt_template.replace(
+        "{application_draft}",
+        json.dumps(application_draft, indent=2)
     )
     
     try:
