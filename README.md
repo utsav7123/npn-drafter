@@ -391,14 +391,14 @@ This is a proof-of-concept demo. Use freely for non-commercial purposes.
 
 Built as part of an application to Organika Health Products.
 
-- GitHub: [your-username/npn-drafter](https://github.com/[your-username]/npn-drafter)
-- LinkedIn: [your profile](https://linkedin.com/in/[your-profile])
+- GitHub:https://github.com/utsav7123/npn-drafter
+- LinkedIn: https://www.linkedin.com/in/utsav-sachinkumar-patel-572b30244/
 
 ---
 
 **Last Updated**: May 2024  
 **Status**: Proof of Concept (POC)  
-**Maintainer**: [Your Name]
+**Maintainer**: Utsav Patel
 
 ---
 
